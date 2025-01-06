@@ -57,7 +57,7 @@ jobs:
           --image $REGION-docker.pkg.dev/$PROJECT_ID/$REGISTRY_NAME/$APP_NAME:$GITHUB_SHA \
           --platform "managed" \
           --service-account $SERVICE_ACCOUNT_EMAIL \
-          --port 5000 \
+          --port 8080 \
           --set-env-vars PROJECT_ID=$PROJECT_ID,REGION=$REGION,APP_NAME=$APP_NAME,REGISTRY_NAME=$REGISTRY_NAME,SERVICE_ACCOUNT_EMAIL=$SERVICE_ACCOUNT_EMAIL,STAGING_BUCKET=$STAGING_BUCKET \
           --quiet
 
