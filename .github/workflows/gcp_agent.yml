@@ -34,7 +34,7 @@ jobs:
         uses: google-github-actions/setup-gcloud@v1
 
       - name: Crear llave para cuenta de servicio principal
-        run: echo "${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}" > sa-agente.json
+        run: echo '${{ secrets.GOOGLE_DRIVE_CREDENTIALS }}' | jq '.' > sa-agente.json
 
       - name: Crear llave para cuenta de servicio de Google Drive
         run: echo '${{ secrets.GOOGLE_DRIVE_CREDENTIALS }}' | jq '.' > sa-gdrive.json

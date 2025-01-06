@@ -616,4 +616,4 @@ class MultiAgentLangGraphApp:
         return content
     
 multi_agent_app = MultiAgentLangGraphApp(project=PROJECT_ID, location= REGION)
-app = multi_agent_app.initialize_workflow()
+# app = multi_agent_app.initialize_workflow()
