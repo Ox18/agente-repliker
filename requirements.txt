@@ -8,3 +8,5 @@ PyPDF2
 gspread
 oauth2client
 google-cloud-vision
+django-environ
+google-api-python-client
