@@ -1,9 +1,9 @@
 from flask import Flask, request, jsonify
 from agente import multi_agent_app
 
-app_flask = Flask(__name__)
+app = Flask(__name__)
 
-@app_flask.route('/api/ask', methods=['POST'])
+@app.route('/api/ask', methods=['POST'])
 def ask():
     data = request.json
     input_text = data.get('pregunta')
@@ -19,4 +19,4 @@ def ask():
         return jsonify({'error': str(e)}), 500
 
 if __name__ == '__main__':
-    app_flask.run(port=8080, debug=True)
+    app.run(port=8080, debug=True)

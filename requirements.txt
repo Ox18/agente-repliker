@@ -10,3 +10,4 @@ oauth2client
 google-cloud-vision
 django-environ
 google-api-python-client
+gunicorn==21.2.0
