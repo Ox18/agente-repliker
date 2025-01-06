@@ -39,6 +39,10 @@ jobs:
       - name: Crear llave para cuenta de servicio de Google Drive
         run: echo "${{ secrets.GOOGLE_DRIVE_CREDENTIALS }}" > sa-gdrive.json
 
+      - name: Validar archivo JSON generado
+        run: |
+          cat sa-gdrive.json | python -m json.tool
+
       - name: Authorize Docker push
         run: gcloud auth configure-docker $REGION-docker.pkg.dev
 
