@@ -132,7 +132,9 @@ class MultiAgentLangGraphApp:
         # credencials = GOOGLE_DRIVE_CREDENTIALS
         # creds = ServiceAccountCredentials.from_json_keyfile_dict(credencials, scope)
         scope = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/auth/drive"]
+
         creds = ServiceAccountCredentials.from_json_keyfile_name(PATH_SA_GDRIVE, scope)
+
         client = gspread.authorize(creds)
 
         @tool
@@ -614,4 +616,4 @@ class MultiAgentLangGraphApp:
         return content
     
 multi_agent_app = MultiAgentLangGraphApp(project=PROJECT_ID, location= REGION)
-app = multi_agent_app.initialize_workflow()
+# app = multi_agent_app.initialize_workflow()
