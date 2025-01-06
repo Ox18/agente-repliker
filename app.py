@@ -3,7 +3,7 @@ from agente import multi_agent_app
 
 app = Flask(__name__)
 
-@app.route('/api/ask', methods=['POST'])
+@app.route('/ask', methods=['POST'])
 def ask():
     data = request.json
     input_text = data.get('pregunta')
