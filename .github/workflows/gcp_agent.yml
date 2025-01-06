@@ -37,7 +37,7 @@ jobs:
         run: echo "${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}" > sa-agente.json
 
       - name: Crear llave para cuenta de servicio de Google Drive
-        run: echo "${{ secrets.GOOGLE_DRIVE_CREDENTIALS }}" > sa-gdrive.json
+        run: echo '${{ secrets.GOOGLE_DRIVE_CREDENTIALS }}' | jq '.' > sa-gdrive.json
 
       - name: Validar archivo JSON generado
         run: |
