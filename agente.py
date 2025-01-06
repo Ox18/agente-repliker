@@ -1,6 +1,5 @@
 import vertexai
 import os
-import json
 from config import PROJECT_ID, REGION, STAGING_BUCKET, PATH_SA_AGENTE, PATH_SA_GDRIVE
 # Configura las credenciales desde el archivo JSON (opcional si ya configuraste la variable de entorno)
 
@@ -617,23 +616,4 @@ class MultiAgentLangGraphApp:
         return content
     
 multi_agent_app = MultiAgentLangGraphApp(project=PROJECT_ID, location= REGION)
-
-path_to_json = PATH_SA_GDRIVE
-
-try:
-    with open(path_to_json, "r") as file:
-        raw_content = file.read()
-
-    # Reemplaza las claves y valores sin comillas con comillas dobles
-    corrected_content = re.sub(r'(?<!")(\b[a-zA-Z0-9_]+\b)(?!")', r'"\1"', raw_content)
-
-    # Guarda el contenido corregido
-    with open(path_to_json, "w") as file:
-        file.write(corrected_content)
-
-    print(f"Archivo {path_to_json} corregido correctamente.")
-except Exception as e:
-    print(f"Error al corregir el archivo JSON: {e}")
-    raise
-
 app = multi_agent_app.initialize_workflow()
